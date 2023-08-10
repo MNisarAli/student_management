@@ -14,11 +14,15 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
 
-    if @student. save
+    if @student.save
       redirect_to students_path
     else
       render :new
     end
+  end
+
+  def edit
+    @student = Student.find_by(id: params[:id])
   end
 
   private
