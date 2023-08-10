@@ -1,6 +1,7 @@
 <h1>New Student</h1>
 
 <%= form_with model: @student do |form| %>
+  
   <p>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
@@ -15,7 +16,18 @@
     <%= form.email_field :email %>
   </p>
 
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+      <ul>
+        <% @student.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
-    <%= form.submit "Create Student"%>
+    <%= form.submit "Save Student" %>
   </p>
 <% end %>
