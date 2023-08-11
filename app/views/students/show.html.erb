@@ -5,3 +5,7 @@
 <p><strong>Email: </strong><%= @student.email %></p>
 
 <%= link_to "Back", students_path %> | <%= link_to "Edit", edit_student_path(@student) %>
+
+<br><br>
+
+<%= button_to "Delete this student", @student, method: :delete %>
