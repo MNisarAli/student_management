@@ -20,3 +20,13 @@ Student.create(
     email: "student#{i+1}email@example.com"
   )
 end
+
+Student.all.each do |student|
+  puts "Creating blog for student #{student.id}"
+  4.times do |i|
+    student.blogs.create(
+      title: "Title for student #{student.id}'s blog #{i+1}",
+      content: "Blog Content for student #{student.id} goes here"
+    )
+  end
+end
