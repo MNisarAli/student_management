@@ -30,3 +30,10 @@ Student.all.each do |student|
     )
   end
 end
+
+Course.create(name: 'Ruby on Rails Course', description: 'Pending')
+Course.create(name: 'ReactJs Course', description: 'Pending')
+Course.create(name: 'Angular Js Course', description: 'Pending')
+Course.create(name: 'NodeJs Course', description: 'Pending')
+Course.create(name: 'Java Course', description: 'Pending')
+Course.create(name: 'Python Course', description: 'Pending')
